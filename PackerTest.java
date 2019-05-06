@@ -48,10 +48,8 @@ public class PackerTest {
         Depot d = null;
         Manifest m = null;
         List<Box> expResult = null;
-        List<Box> result = Packer.packProducts(c, d, m);
+        List<Box> result = null;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

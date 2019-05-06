@@ -43,11 +43,9 @@ public class ManifestTest {
     @Test
     public void testAddProduct_Product() {
         System.out.println("addProduct");
-        Product p = null;
+        Product p = new Product("Nails", 1, true, true);
         Manifest instance = new Manifest();
         instance.addProduct(p);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -56,12 +54,10 @@ public class ManifestTest {
     @Test
     public void testAddProduct_Product_int() {
         System.out.println("addProduct");
-        Product p = null;
+        Product p = new Product("Glue", 1, true, false);
         int quantity = 0;
         Manifest instance = new Manifest();
-        instance.addProduct(p, quantity);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.addProduct(p, quantity);  
     }
 
     /**
@@ -70,11 +66,9 @@ public class ManifestTest {
     @Test
     public void testRemoveProduct() {
         System.out.println("removeProduct");
-        Product p = null;
+        Product p = new Product("Glue", 2, false, false);
         Manifest instance = new Manifest();
         instance.removeProduct(p);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,8 +81,6 @@ public class ManifestTest {
         double expResult = 0.0;
         double result = instance.getTotalWeight();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -102,8 +94,6 @@ public class ManifestTest {
         Product expResult = null;
         Product result = instance.getHeaviestUnder(weight);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -113,11 +103,9 @@ public class ManifestTest {
     public void testIsEmpty() {
         System.out.println("isEmpty");
         Manifest instance = new Manifest();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.isEmpty();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -126,13 +114,11 @@ public class ManifestTest {
     @Test
     public void testContainsProduct() {
         System.out.println("containsProduct");
-        Product p = null;
+        Product p = new Product("Nails", 1, false, false);
         Manifest instance = new Manifest();
         boolean expResult = false;
         boolean result = instance.containsProduct(p);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -145,8 +131,6 @@ public class ManifestTest {
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -159,8 +143,6 @@ public class ManifestTest {
         boolean expResult = false;
         boolean result = instance.hasFragileItems();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

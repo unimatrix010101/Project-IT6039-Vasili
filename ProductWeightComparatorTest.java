@@ -43,14 +43,12 @@ public class ProductWeightComparatorTest {
     @Test
     public void testCompare() {
         System.out.println("compare");
-        Product a = null;
-        Product b = null;
+        Product a = new Product("Tape", 2, true, false);
+        Product b = new Product("Tape", 2, false, false);
         ProductWeightComparator instance = new ProductWeightComparator();
         int expResult = 0;
         int result = instance.compare(a, b);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
     }
     

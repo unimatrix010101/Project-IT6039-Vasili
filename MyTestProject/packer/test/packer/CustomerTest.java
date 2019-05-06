@@ -15,7 +15,7 @@ import packer.Depot;
 
 /**
  *
- * @author bunta
+ * @author Vasili
  */
 public class CustomerTest {
 
@@ -34,6 +34,7 @@ public class CustomerTest {
     
     Depot testDepot0 = new Depot("Test Depot", testAddress0);
     Depot testDepot4 = new Depot("Test Depot", testAddress4);
+   
         
     @BeforeClass
     public static void setUpClass() {

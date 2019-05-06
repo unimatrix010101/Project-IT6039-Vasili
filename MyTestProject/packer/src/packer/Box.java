@@ -2,7 +2,7 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Vasili
  */
 public class Box {
     
@@ -44,20 +44,38 @@ public class Box {
         }
         return label.toString();
     }
-    
+    /**
+     * Added @override annotation to help prevent errors
+     * @return Returns label
+     */
+    @Override
     public String toString() {
         return getLabel();
     }
     
+    /**
+     * Syntax Error
+     * Changed return contents.getWeight(); to return contents.getTotalWeight(); 
+     * to return total weight of box
+     * @return Returns total box weight
+    */
+    
     public double getWeight() {
-        return contents.getWeight();
+        return contents.getTotalWeight();
     }
     
-    public void addProduct(Product product) {
-        if (canFit(product)) {
-            contents.addProduct(product, 1);
-        }
-    }
+   /**
+    * Syntax Error
+    * Removed the function bellow as the code is duplicate.
+    
+       * public void addProduct(Product product,) {
+       * if (canFit(product)) {
+           // contents.addProduct(product, 1);
+        *}
+    *}
+     * @param p indicates how many products can fit
+     * @return Returns total weigh times quantity
+    */
     
     public boolean canFit(Product p) {
         return p.getWeight() < 40;

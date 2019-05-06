@@ -12,7 +12,7 @@ import org.junit.Before;
 
 /**
  *
- * @author bunta
+ * @author Vasili
  */
 public class ProductTest {
     

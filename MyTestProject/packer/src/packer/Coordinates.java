@@ -2,7 +2,7 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Vasili
  */
 public class Coordinates {
     
@@ -35,7 +35,14 @@ public class Coordinates {
         double dist = Math.abs(xDiff) + Math.abs(yDiff);
         return dist;
     }
-    
+    /**
+     * Logical Error
+     * Changed return of dist1 + dist2 with +1 to cover the 
+     * extra distance of adding 1 km to the result
+     * @param other Calculates X and Y coordinates for closest match
+     * @return Returns the distance between euclideanDistance and manhattanDistance
+     * to the customer with a +1 extra kilometer added as required
+    */
     public double companyDistanceTo(Coordinates other) {
         double xDiff1 = other.getX() - this.getX();
         double yDiff1 = other.getY() - this.getY();
@@ -43,7 +50,7 @@ public class Coordinates {
         double xDiff2 = other.getX() - this.getX();
         double yDiff2 = other.getY() - this.getY();
         double dist2 = Math.abs(xDiff2) + Math.abs(yDiff2);
-        return (dist1 + dist2)/2;
+        return (dist1 + dist2)/2+1; // Changed from return (dist1 + dist2)/2;
     }
 
 }

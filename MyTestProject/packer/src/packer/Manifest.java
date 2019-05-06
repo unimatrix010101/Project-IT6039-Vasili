@@ -36,11 +36,16 @@ public class Manifest {
             }
         }
     }
-    
+    /**
+     * Removed -1 from quantities.put(p,quantities.get(p)-1);
+     * as it was a logical error
+     * @param p defines when the product quantity gets removed
+     */
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
-            quantities.put(p,quantities.get(p)-1);
+            quantities.put(p,quantities.get(p));
         }
+            
         if (quantities.get(p) == 0) {
             quantities.remove(p);
         }
@@ -73,7 +78,11 @@ public class Manifest {
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
-    
+    /**
+     * Added @override annotation to help prevent errors
+     * @return Returns total result of product manifest and it's length
+     */
+    @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Product p : quantities.keySet()) {
@@ -82,16 +91,17 @@ public class Manifest {
             result.append(quantities.get(p));
             result.append("\n");
         }
-        return result.substring(0, result.length()-1);
+        //
+        return result.substring(0, result.length());
     }
-    
+    /**
+     * Re factored code to one line to make it's operation more efficient
+     * @return Re factored
+     */
     public boolean hasFragileItems() {
-        for (Product p : quantities.keySet()) {
-            if (p.isFragile()) {
-                return true;
-            }
-        }
-        return false;
+        return quantities.keySet().stream().anyMatch((p) -> (p.isFragile()));
     }
-    
-
+   /**
+    * added an extra } because it was missing one
+    */ 
+}

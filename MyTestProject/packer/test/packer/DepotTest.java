@@ -13,7 +13,7 @@ import org.junit.BeforeClass;
 
 /**
  *
- * @author bunta
+ * @author Vasili
  */
 public class DepotTest {
     

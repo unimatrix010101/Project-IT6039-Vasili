@@ -2,7 +2,7 @@ package packer;
 
 /**
  *
- * @author I.M.Bad
+ * @author Vasili
  */
 public class Address {
     private String street;
@@ -18,7 +18,11 @@ public class Address {
         this.postcode = postcode;
         this.coordinates = coordinates;
     }
-
+    /**
+     * Added @override annotation to help prevent errors
+     * @return Returns Address details
+     */
+    @Override
     public String toString() {
         return 
                 street + "\n" +
